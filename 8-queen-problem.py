@@ -1,6 +1,4 @@
 import random
-import math
-import time
 from itertools import permutations
 
 # constants
@@ -79,7 +77,7 @@ def crossover(parent1, parent2):
     return [mutation(child1), mutation(child2)]
 
 
-def print_chrom(chrom):
+def printChrom(chrom):
     for i in range(8):
         print("|", end='')
         for j in range(8):
@@ -98,7 +96,7 @@ while True:
     if (pop[-1]["penality"] == 0):
         print("rounds : ", rounds)
         print(pop[-1])
-        print_chrom(pop[-1]["genotype"])
+        printChrom(pop[-1]["genotype"])
         break
 
     childs = parentSelectoin(pop, parentCount)
