@@ -11,14 +11,11 @@ rounds = 0
 
 
 def init(popSize):
-    allPermutations = list(permutations([1, 2, 3, 4, 5, 6, 7, 8], r=None))
-    index = random.sample(range(40320), popSize)
     result = []
-    for i in index:
-        result.append({
-            "genotype": list(
-                allPermutations[i]),
-            "penality": totalPenality(list(allPermutations[i]))})
+    for i in range(popSize):
+        sample = random.sample(range(1, 9), 8)
+        result.append({"genotype": sample, "penality": totalPenality(sample)})
+
     return (sorted(result, key=lambda chrom: -chrom["penality"]))
 
 

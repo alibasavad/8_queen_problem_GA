@@ -7,23 +7,17 @@ pop_size = 50
 parentCount = 5
 mutation_prob = 5
 rounds = 0
-n = 11
+n = 20
 
 # functions
 
 
 def init(popSize):
-    arr = []
-    for i in range(1, n+1):
-        arr.append(i)
-    allPermutations = list(permutations(arr, r=None))
-    index = random.sample(range(math.factorial(n)), popSize)
     result = []
-    for i in index:
-        result.append({
-            "genotype": list(
-                allPermutations[i]),
-            "penality": totalPenality(list(allPermutations[i]))})
+    for i in range(popSize):
+        sample = random.sample(range(1, n+1), n)
+        result.append({"genotype": sample, "penality": totalPenality(sample)})
+
     return (sorted(result, key=lambda chrom: -chrom["penality"]))
 
 
