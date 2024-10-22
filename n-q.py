@@ -7,7 +7,7 @@ pop_size = 50
 parentCount = 5
 mutation_prob = 5
 rounds = 0
-n = 20
+n = 50
 
 # functions
 
